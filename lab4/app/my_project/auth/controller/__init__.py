@@ -10,6 +10,7 @@ from .orders.reservation_controller import ReservationController
 from .orders.bonus_card_controller import BonusCardController
 from .orders.company_and_bonus_card_controller import CompanyAndBonusCardController
 from .orders.driver_and_bonus_card_controller import DriverAndBonusCardController
+from .orders.from_5th_lab_controller import From5thLabController
 
 
 company_controller = CompanyController()
@@ -22,3 +23,4 @@ reservation_controller = ReservationController()
 bonus_card_controller = BonusCardController()
 company_and_bonus_card_controller = CompanyAndBonusCardController()
 driver_and_bonus_card_controller = DriverAndBonusCardController()
+from_5th_lab_controller = From5thLabController()

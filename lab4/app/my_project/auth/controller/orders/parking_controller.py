@@ -90,3 +90,10 @@ class ParkingController(GeneralController):
         if not objects:
             abort(HTTPStatus.NOT_FOUND)
         return [obj.put_into_dto() for obj in objects]
+
+    def timestamp(self):
+        """
+        Gets Client objects from database table with name filter and field 'number' >= in_number
+        using Service layer as DTO objects.
+        """
+        return self._service.timestamp()

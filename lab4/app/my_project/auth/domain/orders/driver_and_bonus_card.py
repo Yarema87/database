@@ -43,7 +43,7 @@ class DriverAndBonusCard(db.Model, IDto):
         :return: Domain object
         """
         obj = DriverAndBonusCard(
-            bonus_card=dto_dict.get("bonus_card"),
-            driver=dto_dict.get("driver")
+            bonus_card_id=dto_dict.get("bonus_card_id"),
+            driver_id=dto_dict.get("driver_id")
         )
         return obj

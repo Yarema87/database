@@ -1,3 +1,5 @@
+from _decimal import Decimal
+from datetime import datetime
 from http import HTTPStatus
 from typing import List
 
@@ -35,3 +37,18 @@ class CompanyAndBonusCardController(GeneralController):
         if not objects:
             abort(HTTPStatus.NOT_FOUND)
         return [obj.put_into_dto() for obj in objects]
+
+    def insert_company_and_bonus_card(self, p_name: str, p_number_of_drivers: int,
+                                      p_type: str, p_value: Decimal, p_validity: datetime, p_parking_id: int):
+        """
+        Gets Client objects from database table with name filter and field 'number' >= in_number
+        using Service layer as DTO objects.
+        :param p_name: name
+        :param p_number_of_drivers: number value
+        :param p_type: type value
+        :param p_validity: validity value
+        :param p_value: value value
+        :param p_parking_id: parking_id value
+        """
+        return self._service.insert_company_and_bonus_card(p_name, p_number_of_drivers, p_type, p_value,
+                                                           p_validity, p_parking_id)

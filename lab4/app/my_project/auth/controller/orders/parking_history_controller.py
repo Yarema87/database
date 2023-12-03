@@ -69,3 +69,5 @@ class ParkingHistoryController(GeneralController):
         if not objects:
             abort(HTTPStatus.NOT_FOUND)
         return [obj.put_into_dto() for obj in objects]
+
+

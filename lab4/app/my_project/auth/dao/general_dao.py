@@ -3,8 +3,7 @@
 from abc import ABC
 from typing import List
 
-from sqlalchemy import inspect
-from sqlalchemy.orm import Mapper
+import sqlalchemy
 
 from ... import db
 
@@ -96,3 +95,14 @@ class GeneralDAO(ABC):
         """
         self._session.query(self._domain_type).delete()
         self._session.commit()
+
+    def get_aggregate_value(self, table: str, column: str, type: str) -> int:
+        """
+        Gets Client objects from database table with name filter and field 'number' >= in_number.
+        :param table: table to find aggregate value
+        :param column: column to find aggregate value
+        :param type: type of aggregate value to find
+        :return: aggregate value
+        """
+        return self._session.execute(sqlalchemy.text("CALL CallGetAggregateValue(:p1, :p2, :p3)"),
+                                     {"p1": column, "p2": type, "p3": table})

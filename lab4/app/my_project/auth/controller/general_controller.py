@@ -85,3 +85,15 @@ class GeneralController(ABC):
         Deletes all objects from database table using Service layer.
         """
         self._service.delete_all()
+
+    def get_aggregate_value(self, column: str, type: str, table: str) -> int:
+        """
+        Gets Client objects from the database table with name filter and field 'number' >= in_number
+        using Service layer as DTO objects.
+        :param column: column to find aggregate value
+        :param type: type of aggregate value to find
+        :param table: table to find aggregate value
+        :return: aggregate value
+        """
+        return self._service.get_aggregate_value(column, type, table)
+

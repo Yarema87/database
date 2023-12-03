@@ -56,7 +56,7 @@ class ParkingLot(db.Model, IDto):
         obj = ParkingLot(
             is_free=dto_dict.get("is_free"),
             is_reserved=dto_dict.get("is_reserved"),
-            parking=dto_dict.get("parking"),
+            parking=dto_dict.get("parking_id"),
             car=dto_dict.get("car"),
         )
         return obj

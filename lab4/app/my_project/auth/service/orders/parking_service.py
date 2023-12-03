@@ -73,3 +73,10 @@ class ParkingService(GeneralService):
         """
         objects = self._dao.find_by_company_owner_id(company_owner_id)
         return objects
+
+    def timestamp(self):
+        """
+        Inserts a company into the database.
+        :return: None (no need to return anything for an INSERT)
+        """
+        self._dao.timestamp()
