@@ -10,6 +10,7 @@ from .orders.reservation_service import ReservationService
 from .orders.bonus_card_service import BonusCardService
 from .orders.company_and_bonus_card_service import CompanyAndBonusCardService
 from .orders.driver_and_bonus_card_service import DriverAndBonusCardService
+from .orders.from_5th_lab_service import From5thLabService
 
 
 company_service = CompanyService()
@@ -22,3 +23,4 @@ reservation_service = ReservationService()
 bonus_card_service = BonusCardService()
 company_and_bonus_card_service = CompanyAndBonusCardService()
 driver_and_bonus_card_service = DriverAndBonusCardService()
+from_5th_lab_service = From5thLabService()

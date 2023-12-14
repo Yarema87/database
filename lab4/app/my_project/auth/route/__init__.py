@@ -20,6 +20,7 @@ def register_routes(app: Flask) -> None:
     from .orders.reservation_route import reservation_bp
     from .orders.driver_and_bonus_card_route import driver_and_bonus_card_bp
     from .orders.company_and_bonus_card_route import company_and_bonus_card_bp
+    from .orders.from_5th_lab_route import from_5th_lab_bp
 
     app.register_blueprint(company_bp)
     app.register_blueprint(parking_bp)
@@ -31,3 +32,4 @@ def register_routes(app: Flask) -> None:
     app.register_blueprint(reservation_bp)
     app.register_blueprint(company_and_bonus_card_bp)
     app.register_blueprint(driver_and_bonus_card_bp)
+    app.register_blueprint(from_5th_lab_bp)

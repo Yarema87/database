@@ -11,6 +11,7 @@ from .orders.reservation_dao import ReservationDAO
 from .orders.bonus_card_dao import BonusCardDAO
 from .orders.company_and_bonus_card_dao import CompanyAndBonusCardDAO
 from .orders.driver_and_bonus_card_dao import DriverAndBonusCardDAO
+from .orders.from_5th_lab_dao import From5thLabDao
 
 
 company_dao = CompanyDAO()
@@ -23,6 +24,7 @@ reservation_dao = ReservationDAO()
 bonus_card_dao = BonusCardDAO()
 company_and_bonus_card_dao = CompanyAndBonusCardDAO()
 driver_and_bonus_card_dao = DriverAndBonusCardDAO()
+from_5th_lab_dao = From5thLabDao()
 
 
 

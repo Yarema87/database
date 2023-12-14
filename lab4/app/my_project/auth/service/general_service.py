@@ -70,3 +70,13 @@ class GeneralService(ABC):
         Deletes all objects from database table using Data Access layer.
         """
         self._dao.delete_all()
+
+    def get_aggregate_value(self, table: str, column: str, type: str) -> int:
+        """
+        Gets Client objects from database table with name filter and field 'number' >= in_number.
+        :param table: table to find aggregate value
+        :param column: column to find aggregate value
+        :param type: type of aggregate value to find
+        :return: aggregate value
+        """
+        return self._dao.get_aggregate_value(column, type, table)

@@ -34,3 +34,13 @@ class CompanyService(GeneralService):
         """
         objects = self._dao.find_by_number(number_of_drivers)
         return objects
+
+    def insert_company(self, p_name: str, p_number_of_drivers: int):
+        """
+        Inserts a company into the database.
+        :param p_name: name value
+        :param p_number_of_drivers: number_of_drivers value
+        :return: None (no need to return anything for an INSERT)
+        """
+        self._dao.insert_company(p_name, p_number_of_drivers)
+

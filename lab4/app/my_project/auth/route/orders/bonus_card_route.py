@@ -1,8 +1,11 @@
 from http import HTTPStatus
 
+from MySQLdb._mysql import connection
 from flask import Blueprint, jsonify, Response, request, make_response
 from decimal import Decimal
 from datetime import datetime
+
+from sqlalchemy.engine import cursor
 
 from ...controller import bonus_card_controller
 from ...domain import BonusCard
@@ -112,6 +115,19 @@ def delete_bonus_card(bonus_card_id: int) -> Response:
     """
     bonus_card_controller.delete(bonus_card_id)
     return make_response("Bonus card deleted", HTTPStatus.OK)
+
+
+@bonus_card_bp.get('/aggregate/<string:column>/<string:type>')
+def get_aggregate_value(column: str, type: str) -> Response:
+    """
+    Gets Client objects from database table with field 'number' >= in_number using Client layer.
+    :param column: column to find aggregate value
+    :param type: type of aggregate value to find
+    :return: Response object
+    """
+    return make_response(jsonify(bonus_card_controller.get_aggregate_value(column, type, table="bonus_card")),
+                         HTTPStatus.OK)
+
 
 @bonus_card_bp.get('/test')
 def test_route():

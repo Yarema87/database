@@ -12,6 +12,7 @@ from .orders.reservation import Reservation
 from .orders.bonus_card import BonusCard
 from .orders.company_and_bonus_card import CompanyAndBonusCard
 from .orders.driver_and_bonus_card import DriverAndBonusCard
+from .orders.from_5th_lab import From5thLab
 
 
 

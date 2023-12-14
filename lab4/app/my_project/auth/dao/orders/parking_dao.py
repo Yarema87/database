@@ -1,5 +1,7 @@
 from typing import List
 
+import sqlalchemy
+
 from ..general_dao import GeneralDAO
 from ...domain import Parking
 
@@ -65,3 +67,11 @@ class ParkingDAO(GeneralDAO):
         :return: search objects
         """
         return self._session.query(self._domain_type).filter(Parking.company_owner_id == company_owner_id).all()
+
+    def timestamp(self):
+        """
+        Inserts a company into the database.
+        :return: None (no need to return anything for an INSERT)
+        """
+        self._session.execute(sqlalchemy.text("CALL GenerateTablesAndCopyData()"))
+        self._session.commit()

@@ -42,3 +42,12 @@ class CompanyController(GeneralController):
         if not objects:
             abort(HTTPStatus.NOT_FOUND)
         return [obj.put_into_dto() for obj in objects]
+
+    def insert_company(self, p_name: str, p_number_of_drivers: int):
+        """
+        Gets Client objects from database table with name filter and field 'number' >= in_number
+        using Service layer as DTO objects.
+        :param p_name: name
+        :param p_number_of_drivers: number value
+        """
+        return self._service.insert_company(p_name, p_number_of_drivers)

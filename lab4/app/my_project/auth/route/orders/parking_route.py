@@ -139,3 +139,13 @@ def delete_parking(parking_id: int) -> Response:
     """
     parking_controller.delete(parking_id)
     return make_response("Parking deleted", HTTPStatus.OK)
+
+
+@parking_bp.post('/generate')
+def timestamp() -> Response:
+    """
+    Inserts a company into the database.
+    :return: Response object
+    """
+    return make_response(jsonify(parking_controller.timestamp()),
+                         HTTPStatus.OK)

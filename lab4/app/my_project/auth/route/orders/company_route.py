@@ -87,3 +87,16 @@ def delete_company(company_id: int) -> Response:
     """
     company_controller.delete(company_id)
     return make_response("Company deleted", HTTPStatus.OK)
+
+
+@company_bp.post('/insert/<string:p_name>/<int:p_number_of_drivers>')
+def insert_company(p_name: str, p_number_of_drivers: int) -> Response:
+    """
+    Inserts a company into the database.
+    :param p_name: name
+    :param p_number_of_drivers: number value
+    :return: Response object
+    """
+    return make_response(jsonify(company_controller.insert_company(p_name, p_number_of_drivers)),
+                         HTTPStatus.OK)
+
